@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ReadyApp.Types
+{
+    public enum UserType
+    {
+        buyer,
+        seller
+    }
+}

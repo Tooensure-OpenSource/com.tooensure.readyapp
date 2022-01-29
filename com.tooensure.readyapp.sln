@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyApp.Android", "ReadyApp\ReadyApp.Android\ReadyApp.Android.csproj", "{E80D1594-2E7A-4B90-A960-7FBBF4773E7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyApp", "ReadyApp\ReadyApp\ReadyApp.csproj", "{B86FAEC4-C4EA-4747-807A-78973D5BC85F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadyApp", "ReadyApp\ReadyApp\ReadyApp.csproj", "{B86FAEC4-C4EA-4747-807A-78973D5BC85F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tooensure", "Tooensure\Tooensure.csproj", "{9033AF25-BE1F-45FC-88DA-6DC1343976BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{B86FAEC4-C4EA-4747-807A-78973D5BC85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B86FAEC4-C4EA-4747-807A-78973D5BC85F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B86FAEC4-C4EA-4747-807A-78973D5BC85F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9033AF25-BE1F-45FC-88DA-6DC1343976BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9033AF25-BE1F-45FC-88DA-6DC1343976BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9033AF25-BE1F-45FC-88DA-6DC1343976BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9033AF25-BE1F-45FC-88DA-6DC1343976BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

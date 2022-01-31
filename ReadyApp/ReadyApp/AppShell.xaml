@@ -2,6 +2,7 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:ReadyApp.Views"
+       xmlns:auth="clr-namespace:ReadyApp.Views.AuthView"
        Title="ReadyApp"
        x:Class="ReadyApp.AppShell">
 
@@ -29,6 +30,13 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+    <TabBar FlyoutItemIsVisible="False">
+        <ShellContent Route="AuthPage" ContentTemplate="{DataTemplate auth:AuthPage}" />
+        <ShellContent Route="AuthDetailPage" ContentTemplate="{DataTemplate auth:AuthDetailPage}" />
+        <ShellContent Route="AuthSignInPage" ContentTemplate="{DataTemplate auth:AuthSignInPage}" />
+        <ShellContent Route="AuthSignUpPage" ContentTemplate="{DataTemplate auth:AuthSignUpPage}" />
+    </TabBar>
+    
     <TabBar>
         <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
         <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />

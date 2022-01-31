@@ -1,5 +1,6 @@
 ﻿using ReadyApp.Models;
 using ReadyApp.Types;
+using ReadyApp.Views.AuthView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,49 +12,35 @@ namespace ReadyApp.ViewModels.AuthVM
 {
     public class AuthViewModel : BaseViewModel
     {
-        private bool _isAuththenticated;
-        private string? _email;
-        private string? _password;
-        private IUnitOfWork _unitOfWork { get; }
-
-        public AuthType AuthType { get; set; }
-
-
-        public Command? LoginWithReady { get; }
-        public Command? LoginWithGoogle { get; }
+        private AuthType _authType { get; set; }
 
         public AuthViewModel()
         {
-            _unitOfWork = new UnitOfWork();
-            LoginWithReady = new Command(OnSignInWithReady);
-            LoginWithReady = new Command(OnSignInWithGoogle);
+        }
+        public async void Instance(AuthType authType)
+        {
+            IsBusy = true;
+            _authType = authType;
+            if (authType.Equals(AuthType.ready)) await OnSignInWithReady();
+            if (authType.Equals(AuthType.google)) await OnSignInWithGoogle();
         }
 
-        public string? Email
+        public async Task<bool> OnSignInWithReady()
         {
-            get { return _email; }
-            set => SetProperty(ref _email, value);
-        }
-        public string? Password
-        {
-            get { return _password ; }
-            set => SetProperty(ref _password, value);
-        }
-
-        private async void OnSignInWithReady(object obj)
-        {
-            _isAuththenticated = 
-                await _unitOfWork.Auth.SignInWithReady(_email, _password);
-
+            IsBusy = true;
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            //await Shell.Current.GoToAsync($"//{nameof()}");
-
+            await Shell.Current.GoToAsync($"//{nameof(AuthSignInPage)}");
+            return IsBusy;
         }
-        private async void OnSignInWithGoogle(object obj)
+        public async Task<bool> OnSignInWithGoogle()
         {
-            _isAuththenticated = 
-                await _unitOfWork.Auth.SignInWithGoogle();
+            IsBusy= true;
+            //var user = await _unitOfWork.Auth.SignInWithGoogle();
+            //return _isAuththenticated = user != null;
+            await Shell.Current.GoToAsync($"{nameof(AuthDetailPage)}?{nameof(AuthDetailViewModel.AuthType)}={_authType.ToString()}");
 
+            //await Shell.Current.GoToAsync($"//{nameof(AuthDetailPage)}");
+            return IsBusy;
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             //await Shell.Current.GoToAsync($"//{nameof()}");
         }

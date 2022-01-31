@@ -13,15 +13,15 @@ namespace ReadyApp.Services
     {
         private static IAuthService _auth = DependencyService.Get<IAuthService>();
 
-        public static async Task<bool> SignInWithReady(string? email, string? password)
+        public async Task<User?> SignInWithReady(string? email, string? password)
         {
             return await _auth.SignInWithReady(email, password);
         }
-        public static async Task<bool> SignInWithGoogle()
+        public async Task<User?> SignInWithGoogle()
         {
             return await _auth.SignInWithGoogle();
         }
-        public static async Task<bool> SignInAnonymously()
+        public async Task<User?> SignInAnonymously()
         {
             return await _auth.SignInAnonymously();
         }

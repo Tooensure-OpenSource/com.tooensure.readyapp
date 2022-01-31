@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ReadyApp.ViewModels.AuthVM"
+             x:Class="ReadyApp.Views.AuthView.AuthPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <StackLayout>
+                <Grid x:Name="animateBtn" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout  Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="10">
+                        <ImageButton Source="bar_image.png" Clicked="OnLoadInWithReady" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             Padding="10,0" HeightRequest="0">
+
+                        <StackLayout   x:Name="logoBtn"  VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" BackgroundColor="Gray" >
+                            <StackLayout >
+                                <ImageButton HeightRequest="40" Source="readyapp_logo_image.png" />
+                            </StackLayout>
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <Label x:Name="counterBtn" Text="" FontAttributes="Bold" TextColor="LightGray" HorizontalOptions="Start" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" >
+                        <ImageButton
+                            x:Name="textBar" Source="signIn_with_ready_image.png"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            NumberOfTapsRequired="1"
+                            Tapped="OnLoadInWithReady"
+                            x:Name="actionCall">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+            <!-- Google Bar-->
+            <StackLayout>
+                <Grid x:Name = "googleAnimateBtn" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout  Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="11">
+                        <ImageButton Source="bar_image.png" Clicked="OnLogInWithGoogle" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+
+                        <StackLayout  x:Name="googleLogoBtn" Padding="10, 0, 0, 0"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <StackLayout>
+                                <ImageButton HeightRequest="40" Source="logo_google.png" BackgroundColor="White" />
+                            </StackLayout>
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <Label Text="" FontAttributes="Bold" TextColor="LightGray" HorizontalOptions="Start"  />
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0"  HorizontalOptions="EndAndExpand" Padding="1, 0" VerticalOptions="EndAndExpand" >
+                        <Image x:Name="googleTextBar"
+                             Source="signIn_with_google_image.png" BackgroundColor="Transparent"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            NumberOfTapsRequired="1"
+                            Tapped="OnLogInWithGoogle"
+                           >
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

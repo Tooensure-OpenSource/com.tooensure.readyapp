@@ -8,8 +8,8 @@ namespace ReadyApp.Services.IService
 {
     public interface IAuthService
     {
-        Task<bool> SignInWithReady(string? email, string? password);
-        Task<bool> SignInWithGoogle();
-        Task<bool> SignInAnonymously();
+        Task<User?> SignInWithReady(string? email, string? password);
+        Task<User?> SignInWithGoogle();
+        Task<User?> SignInAnonymously();
     }
 }
